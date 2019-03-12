@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Galeria De Imagenes</title>
+       <link rel="stylesheet" href="estilo.css">
+    </head>
+<body>
+    
+        <div id="CuadroInf">
+					<h3 id="numeroimg">[1/5] Mina la Prieta</h3>			
+					<p id="texto">Mina la prite cuyo nombre original era mina la negrita, una de las minas antiguas que mas produccion brindaba en cuanto a plata</p>
+								<div id="divdentro">
+										<button onClick="anterior()" id="boton_1">&lt;</button>
+										<button onClick="siguiente()" id="boton_1">&gt;</button>
+								</div>
+            <img id="imagen" src="MinaLaPrieta.jpg" name="Diapositiva">
+              </div>
+<script>
+ // Inicio de la configuración de diapositivas.
+				var arregtitulo = new Array("[1/5] Mina La Prieta","[2/5] Palacio Alvarado","[3/5] Catedral De Parral","[4/5] Puerta del Tiempo","[5/5] Teatro Hidalgo");
+				var arr = new Array("Mina la prite cuyo nombre original era mina la negrita, una de las minas antiguas que mas produccion brindaba en cuanto a plata",
+				"Palacio Alvarado lugar perfecto para admirar la belleza de nuestro Parral transportando a la epoca revolucionaria",
+				"Catedral de Parral la mas antigua en toda la ciudad cuya principal caracteristica es la de sus 2 grandes y magestuosas torres",
+				"Puerta Del Tiempo ubicada en la salida a Jimenez y periferico norte en la cual contine 2 cara indicando el pasado y el futuro ",
+				"Antigua biblioteca remodelada para fines culturales y bailes");
+
+	  // Declaración de variables.
+	  var Fotos; // Lugar donde se almacenara la ruta de la imagen.
+		  var V_max; // Longitud máxima del vector "Fotos".
+		  var aux;   // Auxiliar para configuración.
+		  var aux_2; // Auxiliar para programación.
+  
+	  // Inicio de variables.
+		  Fotos = new Array(); // Crea el vector para las fotos.
+		  aux_2 = 0; // Inicia la variable auxiliar de programación con valor 0.
+  
+	  // Rutas de imagenes.
+		Fotos [0] = "MinaLaPrieta.jpg" /* Aqui pones la ruta del enlace a la imagen */ /*PD: eta primera imagen se debe repetir en el HTML*/
+		Fotos [1] = "PalacioAlvarado.jpg" /* Aqui pones la ruta del enlace a la imagen */
+		Fotos [2] = "parralCatedral.jpg" /* Aqui pones la ruta del enlace a la imagen */
+		Fotos [3] = "PuertaDelTiempo.jpg" /* Aqui pones la ruta del enlace a la imagen */
+		Fotos [4] = "TeatroHidalgo.jpg" /* Aqui pones la ruta del enlace a la imagen */
+		/* Para añadir nuevas imagenes simplemente adicionas "Fotos[] = "ruta imagen" */
+
+		V_max = Fotos.length; // Obtiene la longitud del vector.
+		V_max = V_max-1; // Diminuye uno su valor dado que V_max coge un valor a más.
+
+// Fin de la configuración de diapositivas.
+
+// Inicio de la programación de diapositivas.
+
+	// Pasar a la siguiente imagen.
+		function siguiente () {
+			
+			if (aux_2 == V_max){
+				aux_2 = 0;
+			}
+			else{
+				aux_2 = aux_2+1;
+			}
+			document.images.Diapositiva.src = Fotos[aux_2];
+			document.getElementById("numeroimg").innerText=arregtitulo[aux_2];
+			document.getElementById("texto").innerText=arr[aux_2];
+
+		}
+
+	// Pasar a la siguiente imagen.
+		function anterior () {
+			
+			if (aux_2 == 0){
+				aux_2 = V_max;
+			}
+			else{
+				aux_2 = aux_2-1;
+			}
+			document.images.Diapositiva.src = Fotos[aux_2];
+			document.getElementById("numeroimg").innerText=arregtitulo[aux_2];
+			document.getElementById("texto").innerText=arr[aux_2];
+		}
+
+// Fin de la programación de diapositivas.
+	  </script>
+</body>
+</html>

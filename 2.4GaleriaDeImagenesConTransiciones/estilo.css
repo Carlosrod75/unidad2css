@@ -1,0 +1,35 @@
+#imagen {
+    background-image: url("MinaLaPrieta.jpg");
+
+    width: 100%;  /*en porcentaje (el highlight del foro lo trasforma) */
+    height: 100%;
+    top:0;
+    left:0;
+    position:fixed;
+    z-index: -1; 
+}
+#CuadroInf {
+    background-color: transparent;
+    border: solid #000;
+    border-top-width: 2px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    width: 200px;
+    height: 200px;
+    top: 0;
+    left:0;
+}body {
+    text-align: center;
+}
+img {
+    width: 200px;
+    height: 200px;
+}
+#divdentro {
+    text-align: center;
+}
+#texto {
+overflow: hidden;
+height: 100px;
+}
